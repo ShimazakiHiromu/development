@@ -93,10 +93,9 @@ SNSで自分のアカウントでの宣伝、SNSで初心者の方で演奏動�
 
 ・フロントエンド
   Ruby on Rails 7.08
-  React        18.2.0
 
 ・インフラ
-  AWS
+  fly.io
 
 ・データベース
   PostgreSQL

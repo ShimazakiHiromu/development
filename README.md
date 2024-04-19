@@ -120,3 +120,6 @@ https://www.figma.com/file/zjtsYiJ0zTxWvKCXcNYNvX/Untitled?type=design&node-id=0
 直接変更できるものではなく、一旦メールなどを介して専用のページで変更する画面遷移になっているか？
 - [x] メールアドレス
 - [x] パスワード
+
+ER図
+[text](er.drawio)

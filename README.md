@@ -136,7 +136,6 @@ ER図
   - content: コメント
   - status: 状態（練習中・練習完了・日課）
   - date: 日記の日付
-  - created_at: 日記の作成日
 
 - Videosテーブル: 動画の情報を持つテーブル
   - file_path: 動画ファイルのパス

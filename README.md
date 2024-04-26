@@ -150,4 +150,4 @@ ER図
 
 - Tasksテーブル：タスクの情報を持つテーブル
  - task_date: タスクの対象日
- - post_created: 日記の投稿がされているか
+ - id_created: 日記の投稿がされているか

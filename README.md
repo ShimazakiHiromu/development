@@ -120,3 +120,34 @@ https://www.figma.com/file/zjtsYiJ0zTxWvKCXcNYNvX/Untitled?type=design&node-id=0
 直接変更できるものではなく、一旦メールなどを介して専用のページで変更する画面遷移になっているか？
 - [x] メールアドレス
 - [x] パスワード
+
+ER図
+[text](er.drawio)
+
+テーブル・カラムの説明
+- userテーブル: userの情報を持つテーブル
+  - name: ユーザーネーム
+  - email: メールアドレス
+  - crypted_password: パスワード
+  - salt: sorcery
+  - line_id: ラインのユーザー識別
+
+- Diarysテーブル: 日記の情報を持つテーブル
+  - content: コメント
+  - status: 状態（練習中・練習完了・日課）
+  - date: 日記の日付
+
+- Videosテーブル: 動画の情報を持つテーブル
+  - file_path: 動画ファイルのパス
+  - uploaded_at: 動画のアップロード日
+  - title: タイトル
+  - artist: アーティスト名
+
+- Remaindersテーブル: リマインダーの情報を持つテーブル
+  - message: リマインダーメッセージ
+  - remind_at: 送信日
+  - status: 状態（送信予定・送信済み）
+
+- Tasksテーブル：タスクの情報を持つテーブル
+ - task_date: タスクの対象日
+ 

@@ -1,0 +1,148 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .main-content {
+
+    display: flex;
+    
+    flex-direction: column;
+    
+    align-items: center;
+    
+    justify-content: center;
+    
+    min-height: calc(100vh - 20px); /* マージンなどの余白を考慮して適切な値に調整 */
+    
+    overflow-y: auto; /* コンテンツが画面より大きい場合にのみスクロールバーを表示 */
+    
+    }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .navbar-toggler {
+    position: absolute;
+    right: 15px; /* 右端から10pxの位置に */
+    top: 10px; /* 上から10pxの位置に */
+  }
+  
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; /* 上端からの位置を0に */
+  }
+  
+  @media (max-width: 991px) {
+    .navbar-brand {
+      position: static;
+      transform: none;
+    }
+    .navbar-collapse {
+        position: fixed;
+        top: 70px; /* ナビゲーションバーの高さに応じて調整 */
+        right: 0; /* 右端に固定 */
+        width: 10%; /* 適切な幅を設定 */
+        overflow-y: auto; /* コンテンツが多い場合はスクロール可能に */
+        background-color: white; /* 背景色 */
+      }
+  }
+
+  .background-image-top {
+    background-image: asset-url('top_log.png');
+    background-size: contain;
+    background-position: center;
+    height: calc(100vh - 70px); /* フッターの高さを引く */
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  /* 小さなデバイス向けの調整 */
+  @media (max-width: 768px) {
+    .background-image-top {
+      background-size: cover; /* 小さい画面でカバーを使用 */
+    }
+  }
+  
+  
+  .rounded-rectangle {
+    background-color: #333; /* 背景色はダークグレーに設定（任意の色に変更可能） */
+    color: white; /* 文字色を白に */
+    padding: 10px 20px; /* 上下のパディング10px、左右のパディング20px */
+    border-radius: 10px; /* 角の丸みを10pxに設定 */
+  }
+
+  .rounded-rectangle2 {
+    background-color: #333; /* 背景色はダークグレーに設定（任意の色に変更可能） */
+    color: white !important; /* 文字色を白に */
+    padding: 10px 20px; /* 上下のパディング10px、左右のパディング20px */
+    border-radius: 10px; /* 角の丸みを10pxに設定 */
+  }
+
+  .btn-custom {
+    background-color: white; /* ボタンの背景色を白に設定 */
+    color: black; /* テキストの色を黒に設定 */
+    border: 1px solid #ccc; /* 軽微なグレーの境界線を追加 */
+    transition: all 0.3s ease; /* スムーズなトランジション効果 */
+  }
+  
+  .btn-custom:hover {
+    box-shadow: 0 4px 8px rgba(29, 29, 29, 0.2); /* ホバー時の影を追加 */
+    transform: translateY(-5px); /* ボタンを上に少し移動 */
+    background-color: white; /* 背景色を変えない */
+    color: black; /* テキストの色を変えない */
+}
+
+
+  
+
+  
+.footer {
+    position: static;
+    width: 100%;
+    height: 70px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .footer-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,27 @@
+<h1 class="mb-4">新規登録</h1>
+
+<%= form_with model: @user, local: true, class: 'needs-validation', novalidate: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, "ユーザー名", class: "form-label" %>
+    <%= form.text_field :name, required: true, class: "form-control", placeholder: "ユーザー名を入力してください" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, "メールアドレス", class: "form-label" %>
+    <%= form.email_field :email, required: true, class: "form-control", placeholder: "メールアドレスを入力してください" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :password, "パスワード", class: "form-label" %>
+    <%= form.password_field :password, required: true, class: "form-control", placeholder: "パスワードを入力してください" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :password_confirmation, "パスワード（確認）", class: "form-label" %>
+    <%= form.password_field :password_confirmation, required: true, class: "form-control", placeholder: "パスワードを再入力してください" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録する", class: "btn btn-primary" %>
+  </div>
+<% end %>

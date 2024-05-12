@@ -15,11 +15,11 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
-gem 'importmap-rails'
+#gem "jsbundling-rails"
+gem "importmap-rails"
 gem "sassc-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -35,6 +35,7 @@ gem "sorcery"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
+
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

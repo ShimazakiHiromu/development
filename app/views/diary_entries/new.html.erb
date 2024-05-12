@@ -1,0 +1,72 @@
+<h1 class="mb-4"><%= @date %>の日記を作成</h1>
+
+<%= form_with model: @diary_entry, url: diary_entries_path, local: true, data: { turbo: false }, class: "needs-validation" do |form| %>
+  <%= form.hidden_field :date, value: @date %>
+
+  <div class="row">
+    <!-- 左上の動画1 -->
+    <div class="col-md-6">
+      <h2>動画1（練習中・練習完了）</h2>
+      <%= form.fields_for :videos, @diary_entry.videos[0] do |video_form| %>
+        <div class="mb-3">
+          <%= video_form.label :file_path, "動画ファイルパス", class: "form-label" %>
+          <%= video_form.text_field :file_path, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :title, "曲名", class: "form-label" %>
+          <%= video_form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :artist, "アーティスト", class: "form-label" %>
+          <%= video_form.text_field :artist, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :status, "ステータス", class: "form-label" %>
+          <%= video_form.select :status, Video.statuses.keys.map { |w| [w.humanize, w] }, {}, class: "form-select" %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 右上の日課動画 -->
+    <div class="col-md-6">
+      <h2>動画2（日課）</h2>
+      <%= form.fields_for :videos, @diary_entry.videos[1] do |video_form| %>
+        <div class="mb-3">
+          <%= video_form.label :file_path, "動画ファイルパス", class: "form-label" %>
+          <%= video_form.text_field :file_path, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :title, "タイトル", class: "form-label" %>
+          <%= video_form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :artist, "アーティスト", class: "form-label" %>
+          <%= video_form.text_field :artist, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= video_form.label :status, "ステータス", class: "form-label" %>
+          <%= video_form.select :status, { "Daily" => "daily" }, {}, class: "form-select" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- 下部の日記入力 -->
+  <div class="mt-4">
+    <h2>日記内容</h2>
+    <div class="mb-3">
+      <%= form.label :content, "日記内容", class: "form-label" %>
+      <%= form.text_area :content, class: "form-control", rows: 5 %>
+    </div>
+
+    <div class="d-grid gap-2">
+      <%= form.submit "作成", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

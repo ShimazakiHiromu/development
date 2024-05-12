@@ -3,10 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = login(params[:email], params[:password])
+    # 正しいキーでログイン試行
+    email = params.dig(:session, :email) || params[:email]
+    password = params.dig(:session, :password) || params[:password]
+
+    user = login(email, password)
 
     if user
-      redirect_to root_url, notice: 'ログインに成功しました。'
+      redirect_to calendar_path, notice: 'ログインに成功しました。'
     else
       flash.now[:alert] = 'メールアドレスまたはパスワードが間違っています。'
       render :new

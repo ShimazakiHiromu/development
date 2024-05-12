@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diary: one
+  file_path: MyString
+  uploaded_at: 2024-05-12 11:15:11
+  title: MyString
+  artist: MyString
+  status: 1
+
+two:
+  diary: two
+  file_path: MyString
+  uploaded_at: 2024-05-12 11:15:11
+  title: MyString
+  artist: MyString
+  status: 1

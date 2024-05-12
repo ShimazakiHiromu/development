@@ -1,0 +1,22 @@
+<h1>日記詳細</h1>
+
+<p>日付: <%= @diary_entry.date %></p>
+<p>内容: <%= @diary_entry.content %></p>
+<p>ステータス: <%= @diary_entry.status.present? ? @diary_entry.status.humanize : "なし" %></p>
+
+<h2>動画一覧</h2>
+<% @diary_entry.videos.each do |video| %>
+  <div>
+    <p>ファイルパス: <%= video.file_path %></p>
+    <p>タイトル: <%= video.title %></p>
+    <p>アーティスト: <%= video.artist %></p>
+    <p>ステータス: <%= video.status.humanize %></p>
+  </div>
+<% end %>
+
+<div class="actions">
+  <%= link_to '編集', edit_diary_entry_path(@diary_entry) %>
+  <%= link_to '削除', diary_entry_path(@diary_entry), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+  <%= link_to 'カレンダーに戻る', calendar_path %>
+</div>
+

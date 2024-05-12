@@ -1,0 +1,80 @@
+<div id='calendar'></div>
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+<style>
+  /* カレンダー全体のスタイル */
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+  /* ヘッダー部分の背景色とフォントカラー */
+  .fc-toolbar {
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* 日付部分の背景色とフォントカラー */
+  .fc-daygrid-day, .fc-timegrid-slot {
+    background-color: #fff;
+    color: #333;
+    border-color: #ddd;
+  }
+
+  /* 今日の日付の背景色 */
+  .fc-daygrid-day.fc-day-today {
+    background-color: #eee;
+  }
+
+  /* イベントのスタイル */
+  .fc-event {
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+
+  /* ホバー時のイベントのスタイル */
+  .fc-event:hover {
+    background-color: #555;
+  }
+
+  /* タイトル部分のスタイル */
+  .fc-toolbar-title {
+    font-weight: bold;
+  }
+
+  /* ナビゲーションボタンのスタイル */
+  .fc-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+
+  .fc-button:hover {
+    background-color: #555;
+  }
+
+  .fc-button:disabled {
+    background-color: #777;
+    color: #bbb;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      },
+      dateClick: function(info) {
+        // 日付クリック時に詳細ページに遷移
+        window.location.href = '/diary_entries/new?date=' + info.dateStr;
+      }
+    });
+    calendar.render();
+  });
+</script>
